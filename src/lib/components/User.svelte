@@ -19,6 +19,15 @@
 		height: {USER_CARD_SIZE.height}px;
 		"
 >
-	<h1 class="text-center text-white">{user.name}</h1>
-	<img src={user.avatar} alt={user.name} />
+	<div class="relative h-full">
+		<h1 class="absolute w-full bg-gray-900/70 text-center text-white">{user.name}</h1>
+		<p class="absolute bottom-6 w-full bg-gray-900/70 text-center text-white">
+			{user.location}
+		</p>
+		<h2 class="absolute bottom-0 w-full bg-gray-900/70 text-center text-white">
+			{user.birthDate.toLocaleDateString()}
+		</h2>
+
+		<img src={user.avatar} alt={user.name} class="h-full w-full" />
+	</div>
 </div>

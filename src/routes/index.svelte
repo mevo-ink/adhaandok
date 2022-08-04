@@ -8,8 +8,8 @@
 	import User from '$lib/components/User.svelte'
 	import SearchBar from '$lib/components/SearchBar.svelte'
 
-	onMount(() => {
-		$users = getUsers()
+	onMount(async () => {
+		$users = await getUsers()
 		select('#Nodes').call(d3Zoom)
 	})
 

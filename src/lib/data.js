@@ -1,14 +1,16 @@
 import { USER_CARD_SIZE } from '$lib/constants'
+import { faker } from '@faker-js/faker'
 
-export const getUsers = () => {
+export const getUsers = async () => {
 	// generate a list of users
 	const users = []
 	for (let i = 0; i < 100; i++) {
-		const name = `User ${i}`
 		users.push({
 			id: i,
-			name,
-			avatar: `https://randomuser.me/api/portraits/men/${i}.jpg`
+			name: faker.name.findName(),
+			avatar: `https://randomuser.me/api/portraits/men/${i}.jpg`,
+			birthDate: faker.date.birthdate(),
+			location: faker.address.country()
 		})
 	}
 	return setInitialPositions(users)
