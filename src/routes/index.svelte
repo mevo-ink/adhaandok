@@ -2,16 +2,21 @@
 	import { onMount } from 'svelte'
 	import { users, activeUser, d3Scale } from '$lib/store'
 	import { getUsers } from '$lib/data'
-	import { zoom, zoomTransform } from 'd3-zoom'
+	// import { zoom, zoomTransform } from 'd3-zoom'
 	import { select } from 'd3-selection'
 
 	import User from '$lib/components/User.svelte'
 	import SearchBar from '$lib/components/SearchBar.svelte'
 
+	let zoom
+	let zoomTransform
+
 	onMount(async () => {
 		$users = await getUsers()
-		const d3Zoom = zoom().scaleExtent([0.4, 4]).on('zoom', handleZoom)
-		select('#Nodes').call(d3Zoom)
+		let d3Zoom = await import('d3-zoom')
+		zoom = d3Zoom.zoom
+		zoomTransform = d3Zoom.zoomTransform
+		select('#Nodes').call(zoom().scaleExtent([0.4, 4]).on('zoom', handleZoom))
 	})
 
 	let activeSearch = ''
