@@ -10,12 +10,11 @@
 
 	onMount(async () => {
 		$users = await getUsers()
+		const d3Zoom = zoom().scaleExtent([0.4, 4]).on('zoom', handleZoom)
 		select('#Nodes').call(d3Zoom)
 	})
 
 	let activeSearch = ''
-
-	let d3Zoom = zoom().scaleExtent([0.4, 4]).on('zoom', handleZoom)
 
 	// function to handle zoom events - arguments: d3ZoomEvent
 	function handleZoom(e) {
