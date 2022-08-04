@@ -2,7 +2,7 @@
 	export let value
 </script>
 
-<div class="absolute flex items-center justify-center gap-2 rounded-md bg-gray-50">
+<div class="absolute flex items-center justify-center gap-2 rounded-md bg-gray-100">
 	<svg
 		fill="none"
 		stroke="currentColor"
@@ -17,7 +17,7 @@
 		type="search"
 		name="searchUsers"
 		bind:value
-		class="rounded-md bg-gray-100 py-2 text-sm text-black focus:bg-white  focus:outline-none"
+		class="rounded-md bg-gray-100 py-2 text-sm text-black focus:outline-none"
 		placeholder="Search..."
 		autocomplete="off"
 	/>
