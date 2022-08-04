@@ -1,12 +1,14 @@
 <script>
 	import { onMount } from 'svelte'
 	import { users, d3Scale } from '$lib/store'
+	import { getUsers } from '$lib/data'
 	import { zoom, zoomTransform } from 'd3-zoom'
 	import { select } from 'd3-selection'
 
 	import User from '$lib/components/User.svelte'
 
 	onMount(() => {
+		$users = getUsers()
 		select('#Nodes').call(d3Zoom)
 	})
 
