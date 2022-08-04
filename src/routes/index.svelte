@@ -6,11 +6,14 @@
 	import { select } from 'd3-selection'
 
 	import User from '$lib/components/User.svelte'
+	import SearchBar from '$lib/components/SearchBar.svelte'
 
 	onMount(() => {
 		$users = getUsers()
 		select('#Nodes').call(d3Zoom)
 	})
+
+	let activeSearch = ''
 
 	// TODO: Update d3Zoom type (refer to d3Zoom docs)
 	let d3Zoom = zoom().scaleExtent([0.4, 4]).on('zoom', handleZoom)
@@ -36,7 +39,9 @@
 	<!-- This container is transformed by d3zoom -->
 	<div id="Node">
 		{#each $users as user}
-			<User {user} />
+			<User {user} isActive={user.name.toLowerCase().includes(activeSearch.trim())} />
 		{/each}
 	</div>
 </div>
+
+<SearchBar bind:value={activeSearch} />

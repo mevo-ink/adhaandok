@@ -1,7 +1,7 @@
 import { USER_CARD_SIZE } from '$lib/constants'
 
 export const getUsers = () => {
-	// generate random 100 users with random names and random age
+	// generate a list of users
 	const users = []
 	for (let i = 0; i < 100; i++) {
 		const name = `User ${i}`
@@ -39,7 +39,7 @@ const getBlock = (index) => {
 	} // width and height of each block
 	const gap = 20 // gap between each block
 	const numBlocks = {
-		width: Math.floor(window.innerWidth / (blockSize.width + gap)) + 10, // extra 10 blocks to make horizontal more width than vertical
+		width: Math.floor(window.innerWidth / (blockSize.width + gap)) + 10, // extra 10 blocks to make horizontal larger than vertical
 		height: Math.floor(window.innerHeight / (blockSize.height + gap)) + 1
 	} // number of blocks in each row and column
 	const block = {

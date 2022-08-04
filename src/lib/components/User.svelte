@@ -1,5 +1,6 @@
 <script>
 	export let user
+	export let isActive = true
 
 	import { USER_CARD_SIZE } from '$lib/constants'
 
@@ -11,6 +12,7 @@
 <div
 	on:click={onUserClick}
 	class="absolute flex cursor-pointer flex-col rounded-lg border border-gray-200 bg-black shadow-lg"
+	class:opacity-10={!isActive}
 	style="left: {user.x}px;
     top: {user.y}px;
 		width: {USER_CARD_SIZE.width}px;
