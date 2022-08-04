@@ -15,7 +15,6 @@
 
 	let activeSearch = ''
 
-	// TODO: Update d3Zoom type (refer to d3Zoom docs)
 	let d3Zoom = zoom().scaleExtent([0.4, 4]).on('zoom', handleZoom)
 
 	// function to handle zoom events - arguments: d3ZoomEvent

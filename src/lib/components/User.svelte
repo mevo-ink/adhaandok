@@ -9,9 +9,9 @@
 	}
 </script>
 
-<div
+<button
 	on:click={onUserClick}
-	class="absolute flex cursor-pointer flex-col rounded-lg border border-gray-200 bg-black shadow-lg"
+	class="absolute flex cursor-pointer flex-col rounded-lg border border-gray-200 bg-black shadow-lg  transition hover:scale-110 hover:bg-gray-50 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 	class:opacity-10={!isActive}
 	style="left: {user.x}px;
     top: {user.y}px;
@@ -19,7 +19,7 @@
 		height: {USER_CARD_SIZE.height}px;
 		"
 >
-	<div class="relative h-full">
+	<div class="relative h-full overflow-hidden rounded-lg">
 		<h1 class="absolute w-full bg-gray-900/70 text-center text-white">{user.name}</h1>
 		<p class="absolute bottom-6 w-full bg-gray-900/70 text-center text-white">
 			{user.location}
@@ -30,4 +30,4 @@
 
 		<img src={user.avatar} alt={user.name} class="h-full w-full" />
 	</div>
-</div>
+</button>
