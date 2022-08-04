@@ -3,16 +3,18 @@
 	export let isActive = true
 
 	import { USER_CARD_SIZE } from '$lib/constants'
+	import { activeUser } from '$lib/store'
 
 	const onUserClick = () => {
-		alert(`User ${user.name} clicked`)
+		$activeUser = user
 	}
 </script>
 
 <button
-	on:click={onUserClick}
-	class="absolute flex cursor-pointer flex-col rounded-lg border border-gray-200 bg-black shadow-lg  transition hover:scale-110 hover:bg-gray-50 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+	on:click|stopPropagation={onUserClick}
+	class="absolute flex cursor-pointer flex-col rounded-lg border border-gray-200 bg-black shadow-lg transition animate-slow animate-infinite hover:scale-110 hover:bg-gray-50 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 	class:opacity-10={!isActive}
+	class:animate-flip={$activeUser?.id === user.id}
 	style="left: {user.x}px;
     top: {user.y}px;
 		width: {USER_CARD_SIZE.width}px;

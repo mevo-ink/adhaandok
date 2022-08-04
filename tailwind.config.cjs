@@ -1,3 +1,5 @@
+const withAnimations = require('animated-tailwindcss')
+
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
@@ -8,4 +10,4 @@ const config = {
 	plugins: []
 }
 
-module.exports = config
+module.exports = withAnimations(config)

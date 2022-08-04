@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte'
-	import { users, d3Scale } from '$lib/store'
+	import { users, activeUser, d3Scale } from '$lib/store'
 	import { getUsers } from '$lib/data'
 	import { zoom, zoomTransform } from 'd3-zoom'
 	import { select } from 'd3-selection'
@@ -31,10 +31,19 @@
 			)
 			.style('transform-origin', '0 0')
 	}
+
+	const clearActiveUser = () => {
+		$activeUser = {}
+	}
 </script>
 
 <!-- This is the container that holds GraphView and we have disabled right click functionality to prevent a sticking behavior -->
-<div id="Nodes" class="absolute h-full w-full" on:contextmenu|preventDefault>
+<div
+	id="Nodes"
+	class="absolute h-full w-full cursor-move"
+	on:contextmenu|preventDefault
+	on:click={clearActiveUser}
+>
 	<!-- This container is transformed by d3zoom -->
 	<div id="Node">
 		{#each $users as user}
