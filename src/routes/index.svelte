@@ -53,7 +53,7 @@
 	<!-- This is the container that holds GraphView and we have disabled right click functionality to prevent a sticking behavior -->
 	<div
 		id="Nodes"
-		class="absolute h-full w-full cursor-move"
+		class="absolute h-full min-h-[10000px] w-full min-w-[10000px] cursor-move"
 		on:contextmenu|preventDefault
 		on:click={clearActiveUser}
 	>
