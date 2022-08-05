@@ -14,7 +14,7 @@
 	on:click|stopPropagation={onUserClick}
 	class="absolute flex cursor-pointer flex-col rounded-lg border border-gray-200 bg-black shadow-lg transition animate-slow animate-infinite hover:scale-110 hover:bg-gray-50 focus:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 	class:opacity-10={!isActive}
-	class:animate-flip={$activeUser?.id === user.id}
+	class:animate-shakeY={$activeUser?.id === user.id}
 	style="left: {user.x}px;
     top: {user.y}px;
 		width: {USER_CARD_SIZE.width}px;

@@ -7,11 +7,17 @@
 
 	import User from '$lib/components/User.svelte'
 	import SearchBar from '$lib/components/SearchBar.svelte'
+	import Loading from '$lib/components/Loading.svelte'
 
+	let isLoading = true
 	let zoom
 	let zoomTransform
 
+	const sleep = (ms) => new Promise((f) => setTimeout(f, ms))
+
 	onMount(async () => {
+		await sleep(2000) // simulate network delay
+		isLoading = false
 		$users = await getUsers()
 		let d3Zoom = await import('d3-zoom')
 		zoom = d3Zoom.zoom
@@ -41,19 +47,23 @@
 	}
 </script>
 
-<!-- This is the container that holds GraphView and we have disabled right click functionality to prevent a sticking behavior -->
-<div
-	id="Nodes"
-	class="absolute h-full w-full cursor-move"
-	on:contextmenu|preventDefault
-	on:click={clearActiveUser}
->
-	<!-- This container is transformed by d3zoom -->
-	<div id="Node">
-		{#each $users as user}
-			<User {user} isActive={user.name.toLowerCase().includes(activeSearch.trim())} />
-		{/each}
+{#if isLoading}
+	<Loading />
+{:else}
+	<!-- This is the container that holds GraphView and we have disabled right click functionality to prevent a sticking behavior -->
+	<div
+		id="Nodes"
+		class="absolute h-full w-full cursor-move"
+		on:contextmenu|preventDefault
+		on:click={clearActiveUser}
+	>
+		<!-- This container is transformed by d3zoom -->
+		<div id="Node">
+			{#each $users as user}
+				<User {user} isActive={user.name?.toLowerCase().includes(activeSearch.trim())} />
+			{/each}
+		</div>
 	</div>
-</div>
 
-<SearchBar bind:value={activeSearch} />
+	<SearchBar bind:value={activeSearch} />
+{/if}
