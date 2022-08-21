@@ -44,7 +44,7 @@
 	},
 	{
 		'id': 3,
-		'name': 'Arun',
+		'name': 'Arun Mathiyalakan',
 		'birthDate': '2022-02-12T00:00:00Z',
 		'deathDate': '2022-02-12T00:00:00Z',
 		'marriageDate': '2022-02-12T00:00:00Z',
@@ -86,7 +86,7 @@
 	},
 	{
 		'id': 6,
-		'name': 'Jana',
+		'name': 'Jana Rajakumar',
 		'birthDate': '2022-02-12T00:00:00Z',
 		'deathDate': '2022-02-12T00:00:00Z',
 		'marriageDate': '2022-02-12T00:00:00Z',
