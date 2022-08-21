@@ -4,7 +4,16 @@ const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+        'default-primary': '#964CFF',
+        'default-secondary': '#4433FF'
+      },
+			fontSize: {
+				title:  ['12px', '14px'],
+				sub: ['8px', '10px']
+			}
+		}
 	},
 
 	plugins: []
