@@ -2,7 +2,20 @@ const withAnimations = require('animated-tailwindcss')
 
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-
+	safelist: [
+		'from-default-banner-primary',
+		'to-default-banner-secondary',
+		'from-inactive-banner-primary',
+		'to-inactive-banner-secondary',
+		'from-partner-banner-primary',
+		'to-partner-banner-secondary',
+		'from-parent-banner-primary',
+		'to-parent-banner-secondary',
+		'from-child-banner-primary',
+		'to-child-banner-secondary',
+		'from-sibling-banner-primary',
+		'to-sibling-banner-secondary'
+	],
 	theme: {
 		extend: {
 			colors: {
