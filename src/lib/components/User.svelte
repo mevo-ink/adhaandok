@@ -4,16 +4,11 @@
 
 	import { activeUser } from '$lib/store'
 	import { USER_CARD_SIZE } from '$lib/constants'
+	import { dateFormatter } from '$lib/utils/dateFormatter'
 
 	import Pattern from '$lib/components/User/Pattern.svelte'
 
 	const onUserClick = () => $activeUser = user
-
-	const today = new Date(user.birthDate), yyyy = today.getFullYear()
-	let mm = today.getMonth() + 1, dd = today.getDate()
-	if (dd < 10) dd = '0' + dd
-	if (mm < 10) mm = '0' + mm
-	const dob = dd + '/' + mm + '/' + yyyy
 </script>
 
 <button
@@ -32,7 +27,7 @@
 		style='text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)'
 	>
 		<h1 class='text-title mt-1.5'> {user.name} </h1>
-		<h1 class='text-sub font-light'> {dob} </h1>
+		<h1 class='text-sub font-light'> {dateFormatter(user.birthDate)} </h1>
 		<h1 class='text-title mt-1.5'> {user.location.substring(0, user.location.indexOf(','))} </h1>
 		<h1 class='text-sub font-light'> {user.location.substring(user.location.indexOf(',') + 1, user.location.length)} </h1>
 		<Pattern />
