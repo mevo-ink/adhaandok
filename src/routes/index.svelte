@@ -3,7 +3,7 @@
 	import { select } from 'd3-selection'
 	// import { zoom, zoomTransform } from 'd3-zoom'
 	import { USER_CARD_SIZE } from '$lib/constants'
-	import { activeUser, d3Scale } from '$lib/store'
+	import { activeUser, colorScheme, d3Scale } from '$lib/store'
 
 	import User from '$lib/components/User.svelte'
 	// import SearchBar from '$lib/components/SearchBar.svelte'
@@ -22,6 +22,7 @@
 		'marriageDate': '2022-02-12T00:00:00Z',
 		'location': 'Italy, Rapallo, Genova',
 		'parents': [],
+		'siblings': [],
 		'children': [3],
 		'partner': 2,
 		'avatar': 'https://randomuser.me/api/portraits/men/1.jpg',
@@ -36,6 +37,7 @@
 		'marriageDate': '2022-02-12T00:00:00Z',
 		'location': 'Italy, Rapallo, Genova',
 		'parents': [],
+		'siblings': [],
 		'children': [3],
 		'partner': 1,
 		'avatar': 'https://randomuser.me/api/portraits/women/2.jpg',
@@ -50,6 +52,7 @@
 		'marriageDate': '2022-02-12T00:00:00Z',
 		'location': 'Italy, Rapallo, Genova',
 		'parents': [1, 2],
+		'siblings': [],
 		'children': [],
 		'partner': null,
 		'avatar': 'https://randomuser.me/api/portraits/men/3.jpg',
@@ -64,6 +67,7 @@
 		'marriageDate': '2022-02-12T00:00:00Z',
 		'location': 'Cananda, Toronto, Ontario',
 		'parents': [],
+		'siblings': [],
 		'children': [6, 7],
 		'partner': 5,
 		'avatar': 'https://randomuser.me/api/portraits/men/4.jpg',
@@ -78,8 +82,9 @@
 		'marriageDate': '2022-02-12T00:00:00Z',
 		'location': 'Cananda, Toronto, Ontario',
 		'parents': [],
+		'siblings': [],
 		'children': [6, 7],
-		'partner': 5,
+		'partner': 4,
 		'avatar': 'https://randomuser.me/api/portraits/women/5.jpg',
 		'x': (USER_CARD_SIZE.width + 10) * 1,
 		'y': (USER_CARD_SIZE.height + 10) * 1
@@ -92,6 +97,7 @@
 		'marriageDate': '2022-02-12T00:00:00Z',
 		'location': 'Cananda, Toronto, Ontario',
 		'parents': [4, 5],
+		'siblings': [7],
 		'children': [],
 		'partner': null,
 		'avatar': 'https://randomuser.me/api/portraits/men/6.jpg',
@@ -106,6 +112,7 @@
 		'marriageDate': '2022-02-12T00:00:00Z',
 		'location': 'Srilanka, Toronto, Ontario',
 		'parents': [4, 5],
+		'siblings': [6],
 		'children': [],
 		'partner': null,
 		'avatar': 'https://randomuser.me/api/portraits/men/7.jpg',
@@ -135,15 +142,13 @@
 		let transform = zoomTransform(this)
 		// selects and transforms all node divs from class 'Node' and performs transformation
 		select('#Node')
-			.style(
-				'transform',
-				'translate(' + transform.x + 'px,' + transform.y + 'px) scale(' + transform.k + ')'
-			)
+			.style('transform', 'translate(' + transform.x + 'px,' + transform.y + 'px) scale(' + transform.k + ')')
 			.style('transform-origin', '0 0')
 	}
 
 	const clearActiveUser = () => {
 		$activeUser = {}
+		$colorScheme = {}
 	}
 </script>
 
