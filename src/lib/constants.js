@@ -1,4 +1,4 @@
 export const USER_CARD_SIZE = {
 	width: 150,
-	height: 200
+	height: 230
 }
