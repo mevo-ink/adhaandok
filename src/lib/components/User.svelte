@@ -57,7 +57,7 @@
 		grid-rows-3
 		drop-shadow-lg
 		bg-black
-		bg-[url(./{relation}.jpg)]
+		bg-{relation}-background
 		bg-cover
 		bg-bottom
 		rounded-md
