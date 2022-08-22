@@ -73,7 +73,18 @@
 		height: {USER_CARD_SIZE.height}px;
 	'
 >
-	<img src={user.avatar} alt={user.name} class='w-full h-full row-span-2 rounded-md drop-shadow-lg' />
+	<img
+		src={user.avatar}
+		alt={user.name}
+		class='
+			w-full
+			h-full
+			row-span-2
+			rounded-md
+			drop-shadow-lg
+			{relation === 'inactive' && 'saturate-0'}
+		'
+	/>
 	<div
 		class='
 			w-full
