@@ -42,7 +42,7 @@
 	}
 
 	let color
-	$: color = $activeUser.name ? ($colorScheme[user.id] ? $colorScheme[user.id] : 'inactive') : 'default'
+	$: color = $activeUser?.name ? ($colorScheme[user.id] ? $colorScheme[user.id] : 'inactive') : 'default'
 </script>
 
 <button
