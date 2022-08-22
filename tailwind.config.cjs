@@ -37,7 +37,7 @@ const config = {
 				'child-banner-primary': '#FA00FF',
         'child-banner-secondary': '#9E00E8',
 				'sibling-banner-primary': '#FF5C00',
-        'sibling-banner-secondary': '#FAFF00'
+        'sibling-banner-secondary': '#FAFF00',
       },
 			backgroundImage: {
         'default-background': 'url(./default.jpg)',

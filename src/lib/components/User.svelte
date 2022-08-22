@@ -84,7 +84,7 @@
 			-z-20
 			rounded-b-md
 			text-white
-			bg-gradient-to-r
+			bg-gradient-to-br
 			from-{relation}-banner-primary
 			to-{relation}-banner-secondary
 			text-center
