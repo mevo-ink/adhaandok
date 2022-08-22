@@ -26,8 +26,8 @@
 		'children': [3],
 		'partner': 2,
 		'avatar': 'https://randomuser.me/api/portraits/men/1.jpg',
-		'x': (USER_CARD_SIZE.width + 10) * 0,
-		'y': (USER_CARD_SIZE.height + 10) * 0
+		'x': (USER_CARD_SIZE.width + 10) * 3,
+		'y': (USER_CARD_SIZE.height + 10) * 1
 	},
 	{
 		'id': 2,
@@ -56,8 +56,8 @@
 		'children': [],
 		'partner': null,
 		'avatar': 'https://randomuser.me/api/portraits/men/3.jpg',
-		'x': (USER_CARD_SIZE.width + 10) * 2,
-		'y': (USER_CARD_SIZE.height + 10) * 0
+		'x': (USER_CARD_SIZE.width + 10) * 1,
+		'y': (USER_CARD_SIZE.height + 10) * 1
 	},
 	{
 		'id': 4,
@@ -71,7 +71,7 @@
 		'children': [6, 7],
 		'partner': 5,
 		'avatar': 'https://randomuser.me/api/portraits/men/4.jpg',
-		'x': (USER_CARD_SIZE.width + 10) * 0,
+		'x': (USER_CARD_SIZE.width + 10) * 2,
 		'y': (USER_CARD_SIZE.height + 10) * 1
 	},
 	{
@@ -86,8 +86,8 @@
 		'children': [6, 7],
 		'partner': 4,
 		'avatar': 'https://randomuser.me/api/portraits/women/5.jpg',
-		'x': (USER_CARD_SIZE.width + 10) * 1,
-		'y': (USER_CARD_SIZE.height + 10) * 1
+		'x': (USER_CARD_SIZE.width + 10) * 2,
+		'y': (USER_CARD_SIZE.height + 10) * 0
 	},
 	{
 		'id': 6,
@@ -101,7 +101,7 @@
 		'children': [],
 		'partner': null,
 		'avatar': 'https://randomuser.me/api/portraits/men/6.jpg',
-		'x': (USER_CARD_SIZE.width + 10) * 2,
+		'x': (USER_CARD_SIZE.width + 10) * 0,
 		'y': (USER_CARD_SIZE.height + 10) * 1
 	},
 	{
@@ -116,8 +116,8 @@
 		'children': [],
 		'partner': null,
 		'avatar': 'https://randomuser.me/api/portraits/men/7.jpg',
-		'x': (USER_CARD_SIZE.width + 10) * 3,
-		'y': (USER_CARD_SIZE.height + 10) * 1
+		'x': (USER_CARD_SIZE.width + 10) * 0,
+		'y': (USER_CARD_SIZE.height + 10) * 0
 	}
 ]
 

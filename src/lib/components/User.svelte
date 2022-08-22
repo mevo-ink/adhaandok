@@ -41,8 +41,8 @@
 		})
 	}
 
-	let color
-	$: color = $activeUser?.name ? ($colorScheme[user.id] ? $colorScheme[user.id] : 'inactive') : 'default'
+	let relation
+	$: relation = $activeUser?.name ? ($colorScheme[user.id] ? $colorScheme[user.id] : 'inactive') : 'default'
 </script>
 
 <button
@@ -57,12 +57,12 @@
 		grid-rows-3
 		drop-shadow-lg
 		bg-black
-		bg-[url(./cardBG.jpg)]
+		bg-[url(./{relation}.jpg)]
 		bg-cover
 		bg-bottom
 		rounded-md
 		overflow-hidden
-		{color === 'inactive' && 'scale-75'}
+		{relation === 'inactive' && 'scale-75'}
 		ease-in-out
 		duration-500
 	'
@@ -85,8 +85,8 @@
 			rounded-b-md
 			text-white
 			bg-gradient-to-r
-			{`from-${color}-banner-primary`}
-			{`to-${color}-banner-secondary`}
+			from-{relation}-banner-primary
+			to-{relation}-banner-secondary
 			text-center
 			overflow-hidden
 			transition
@@ -97,6 +97,6 @@
 		<h1 class='text-sub font-light'> {dateFormatter(user.birthDate)} </h1>
 		<h1 class='text-title mt-1.5'> {user.location.substring(0, user.location.indexOf(','))} </h1>
 		<h1 class='text-sub font-light'> {user.location.substring(user.location.indexOf(',') + 1, user.location.length)} </h1>
-		<Pattern {color} />
+		<Pattern {relation} />
 	</div>
 </button>
