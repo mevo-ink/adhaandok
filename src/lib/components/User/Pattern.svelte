@@ -1,7 +1,5 @@
 <script>
-  export let user
-
-  import { activeUser, colorScheme } from '$lib/store'
+  export let color
 
   const colors = {
     'default-pattern-primary': '#2DD2D2',
@@ -18,8 +16,6 @@
     'sibling-pattern-secondary': '#898C00'
   }
 
-  let color
-	$: color = $activeUser?.name ? ($colorScheme[user.id] ? $colorScheme[user.id] : 'inactive') : 'default'
 </script>
 
 <svg class='absolute -z-10 w-36 -top-3' height='100' viewBox='0 0 210 100' fill='none'>

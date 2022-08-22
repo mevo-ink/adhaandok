@@ -97,6 +97,6 @@
 		<h1 class='text-sub font-light'> {dateFormatter(user.birthDate)} </h1>
 		<h1 class='text-title mt-1.5'> {user.location.substring(0, user.location.indexOf(','))} </h1>
 		<h1 class='text-sub font-light'> {user.location.substring(user.location.indexOf(',') + 1, user.location.length)} </h1>
-		<Pattern {user} />
+		<Pattern {color} />
 	</div>
 </button>
