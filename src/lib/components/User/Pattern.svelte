@@ -27,10 +27,10 @@
   <path d='M138.574 153L32.4468 46L-49 128.116' stroke='url(#paint1_linear_401_2)' stroke-opacity='0.3' stroke-width='30'/>
   <defs>
     <linearGradient id='paint0_linear_401_2' x1='102.823' y1='-21' x2='102.999' y2='86.0009'>
-      <stop class={colors[`${color}-pattern-primary`]} />
+      <stop stop-color={colors[`${color}-pattern-primary`]} />
     </linearGradient>
     <linearGradient id='paint1_linear_401_2' x1='96.7513' y1='153' x2='96.575' y2='45.9991'>
-      <stop class={colors[`${color}-pattern-secondary`]} />
+      <stop stop-color={colors[`${color}-pattern-secondary`]} />
     </linearGradient>
   </defs>
 </svg>
