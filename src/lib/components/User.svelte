@@ -11,34 +11,11 @@
 		$activeUser = {}
 		$colorScheme = {}
 		$activeUser = user
-		$colorScheme = {
-			...$colorScheme,
-			[user.id]: 'default'
-		}
-		if (user.partner) {
-			$colorScheme = {
-				...$colorScheme,
-				[user.partner]: 'partner'
-			}
-		}
-		user.parents.forEach(parent => {
-			$colorScheme = {
-				...$colorScheme,
-				[parent]: 'parent'
-			}
-		})
-		user.children.forEach(child => {
-			$colorScheme = {
-				...$colorScheme,
-				[child]: 'child'
-			}
-		})
-		user.siblings.forEach(sibling => {
-			$colorScheme = {
-				...$colorScheme,
-				[sibling]: 'sibling'
-			}
-		})
+		$colorScheme = { [user.id]: 'default' }
+		if (user.partner) $colorScheme = Object.assign($colorScheme, { [user.partner]: 'partner' })
+		user.parents.forEach(parent => { $colorScheme = Object.assign($colorScheme, { [parent]: 'parent' }) })
+		user.children.forEach(child => { $colorScheme = Object.assign($colorScheme, { [child]: 'child' }) })
+		user.siblings.forEach(sibling => { $colorScheme = Object.assign($colorScheme, { [sibling]: 'sibling' }) })
 	}
 
 	let relation
@@ -100,7 +77,6 @@
 			to-{relation}-banner-secondary
 			text-center
 			overflow-hidden
-			transition
 		'
 		style='text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)'
 	>
