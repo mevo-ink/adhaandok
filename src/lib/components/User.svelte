@@ -34,12 +34,7 @@
 
 <button
 	on:click|stopPropagation={onUserClick}
-	class="
-		absolute
-		grid
-		h-full
-		w-full
-		grid-rows-3
+	class="absolute grid h-full w-full grid-rows-3
 		bg-black
 		px-1
 		pt-1
